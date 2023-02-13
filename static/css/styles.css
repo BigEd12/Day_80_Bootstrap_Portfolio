@@ -1,0 +1,197 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 400%;
+    font-weight: 700;
+}
+
+#landing {
+    background-image: url("../img/home-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 4%;
+    height: 1000px;
+    width: 130%;
+}
+
+a {
+    color: #ACCAF2;
+    text-decoration: none;
+    transition: 1s;
+    opacity: 0.3
+    transition-timing-function: ease-in-out;
+}
+
+a:hover {
+    opacity: 2;
+    color: #C4F2EE;
+}
+
+p {
+    font-weight: 400;
+}
+
+/*-------------------- NAVBAR --------------------*/
+#nav-menu {
+    text-align: center;
+}
+
+.offcanvas {
+    background-color: #011640;
+}
+
+#nav-menu .profile-pic {
+    border-radius: 50%;
+    padding-top: 10%;
+    padding-bottom: 3%;
+}
+
+.icon-images {
+    width: 3rem;
+    padding: 20%;
+}
+
+.menu-images {
+    width: 3rem;
+    display: inline-block;
+    padding-right: 5%;
+}
+
+.icon-image {
+    display: inline-block;
+}
+
+.nav-link {
+    padding: 5% 0 5% 0;
+}
+
+#nav-menu a, #nav-menu p {
+    color: #C4F2EE;
+    opacity: 0.7;
+    transition: 1s;
+
+}
+
+#nav-menu a:hover{
+    opacity: 1;;
+}
+
+#nav-menu .links {
+    text-align: left;
+    padding-left: 30%;
+    padding-top: 5%;
+}
+
+.navbar-toggler {
+    background-color: #C4F2EE;
+}
+
+.copyright-text {
+    position: absolute;
+    bottom: 1%;
+    left: 30%;
+    color: #C4F2EE;
+}
+/*-------------------- HOME --------------------*/
+.title-text {
+    color: #C4F2EE;
+    position: relative;
+    top: 250%;
+}
+
+/*-------------------- ABOUT --------------------*/
+#about {
+    padding: 3%;
+    color: #011140;
+    width: 130%;
+}
+
+.motivation-text {
+    padding-top: 5%;
+    padding-bottom: 2%
+}
+
+.motivation-section {
+    padding-bottom: 5%;
+}
+
+/*-------------------- CV --------------------*/
+
+#cv {
+    background-color: #C4F2EE;
+    width: 130%;
+    padding: 5%;
+    color: #011140;
+}
+
+.cv-section-titles {
+    padding: 3% 3% 3% 0;
+}
+
+/*-------------------- PORTFOLIO --------------------*/
+#portfolio {
+    width: 130%;
+    padding: 5%;
+    color: #011140;
+}
+
+.project-row {
+    padding: 5% 0%;
+}
+
+/*-------------------- CONTACT --------------------*/
+#contact {
+    background-color: #C4F2EE;
+    width: 130%;
+    padding: 5%;
+    color: #011140;
+}
+
+/*-------------------- RESPONSIVENESS --------------------*/
+
+    /*TABLETS*/
+
+@media (max-width: 1200px) {
+    /*COLLAPSE NAV*/
+	#sticky-bar {
+        visibility: hidden;
+        z-index: -1;
+        transition: 1s;
+    }
+
+    /*BACKGROUND IMAGE*/
+    .full-content {
+        position: relative;
+        left: 0;
+        transition: 1s;
+    }
+
+    /*PADDING FOR IMAGES*/
+    .project-images {
+        padding-bottom: 3%;
+    }
+
+    .project-row {
+        padding: 0;
+    }
+
+
+}
+
+.hamburger {
+    position: fixed;
+    height: 50px;
+    width: 100px;
+    background-color: red;
+    left: 350px;
+}
+
+#footer {
+    color: black;
+    height: 50px;
+    width: 100px;
+    background-color: red;
+}

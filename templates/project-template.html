@@ -1,0 +1,35 @@
+{% include "nav_menu.html" %}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <h4>{{ project.project_number }}</h4>
+                <h3>{{ project.project_name }}</h3>
+            </div>
+            <div class="col-lg-6 col-12">
+                <p>{{ project.course_name }}</p>
+                <p>{{ project.course_provider }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <img src="#" alt="#">
+            </div>
+            <div class="col-lg-6 col-12">
+                <p>{{ project.description }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <a class="btn btn-outline-dark" href="https://github.com/BigEd12/Project_{{ project.number }}" role="button">View on GitHub</a>
+            </div>
+            <div class="col-lg-6 col-7">
+                <p>Focus for the project:</p>
+                <br>
+                <em><p>{{ project.what_i_Learnt }}</p></em>
+            </div>
+        </div>
+
+    </div>
+</body>

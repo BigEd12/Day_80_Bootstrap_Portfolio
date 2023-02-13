@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!---------- BOOTSTRAP CSS & JAVA ---------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!---------- GOOGLE FONTS ---------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!---------- CUSTOM STYLESHEET ---------->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <section id="nav-menu">
+
+
+        <nav class="navbar bg-dark fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Eduardo Olmos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img class="profile-pic" src="{{ url_for('static', filename='/img/profile-pic.png') }}" alt="Eduardo-Olmos">
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="icon-image nav-link" aria-current="page" href="#">
+                          <img class="icon-images" src="{{ url_for('static', filename='/img/instagram_blue.png') }}">
+                      </a>
+                      <a class="icon-image nav-link" aria-current="page" href="www.linkedin.com/in/edward-olmos10">
+                          <img class="icon-images" src="{{ url_for('static', filename='/img/linkedin_blue.png') }}">
+                      </a>
+                      <a class="icon-image nav-link" aria-current="page" href="https://github.com/BigEd12">
+                          <img class="icon-images" src="{{ url_for('static', filename='/img/github_blue.png') }}">
+                      </a>
+                  </li>
+
+
+
+                  <li class="nav-item links">
+                    <a class="nav-link active" aria-current="page" href="#landing">
+                        <img class="menu-images" src="{{ url_for('static', filename='/img/home_blue.png') }}">
+                        Home
+                    </a>
+                  </li>
+                  <li class="nav-item links">
+                    <a class="nav-link" href="#about">
+                        <img class="menu-images" src="{{ url_for('static', filename='/img/about_blue.png') }}">
+                        About</a>
+                  </li>
+                  <li class="nav-item links">
+                    <a class="nav-link" href="#cv">
+                        <img class="menu-images" src="{{ url_for('static', filename='/img/cv_blue.png') }}">
+                        CV</a>
+                  </li>
+                  <li class="nav-item links">
+                    <a class="nav-link" href="#portfolio">
+                        <img class="menu-images" src="{{ url_for('static', filename='/img/portfolio_blue.png') }}">
+                        Portfolio</a>
+                  </li>
+                  <li class="nav-item links">
+                    <a class="nav-link" href="#contact">
+                        <img class="menu-images" src="{{ url_for('static', filename='/img/contact_blue.png') }}">
+                        Contact</a>
+                  </li>
+
+                </ul>
+
+                <p class="copyright-text">© {{ year }} Eduardo Olmos</p>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </section>
+
+</body>
+</html>
