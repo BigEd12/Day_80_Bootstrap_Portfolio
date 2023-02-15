@@ -1,35 +1,39 @@
 {% include "nav_menu.html" %}
 
 <body>
-    <div class="container">
+    <section id="project-template-header">
         <div class="row">
-            <div class="col-lg-6 col-12">
-                <h4>{{ project.project_number }}</h4>
-                <h3>{{ project.project_name }}</h3>
-            </div>
-            <div class="col-lg-6 col-12">
-                <p>{{ project.course_name }}</p>
-                <p>{{ project.course_provider }}</p>
+            <div class="col-9">
+                <h1>{{ project.number }}. {{ project.name }}</h1>
             </div>
         </div>
+    </section>
+    <section id="project-template-body">
         <div class="row">
-            <div class="col-lg-6 col-12">
-                <img src="#" alt="#">
+            <div class="col-12 col-lg-6">
+                <div class="project-image-container">
+                    <img src="{{ url_for('static', filename='/images/projects/' ~ project.number ~ '/gifs/1.gif') }}">
+                </div>
             </div>
-            <div class="col-lg-6 col-12">
-                <p>{{ project.description }}</p>
+            <div class="col-12 col-lg-4">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <hr>
+                <p class="card-text">{{ project.description }}</p>
+                {% if project.focus %}
+                <hr>
+                <p class="card-text"><small class="text-muted">Focus for the project:</small></p>
+                <p class="card-text"><small class="text-muted">{{ project.focus }}</small></p>
+                {% endif %}
+                <hr>
+                <p class="card-text"><small class="text-muted">{{ project.level }} project</small></p>
+                <hr>
+                <p class="card-text"><small class="text-muted">{{ project.c_provider }}</small></p>
+                <p class="card-text"><small class="text-muted">{{ project.c_name }}</small></p>
+                <hr>
+                <a class="icon-image" aria-current="page" href="{{ project.github }}">
+                    <img class="icon-images" src="{{ url_for('static', filename='/img/github.png') }}">
+                </a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-                <a class="btn btn-outline-dark" href="https://github.com/BigEd12/Project_{{ project.number }}" role="button">View on GitHub</a>
-            </div>
-            <div class="col-lg-6 col-7">
-                <p>Focus for the project:</p>
-                <br>
-                <em><p>{{ project.what_i_Learnt }}</p></em>
-            </div>
-        </div>
-
-    </div>
+    </section>
 </body>

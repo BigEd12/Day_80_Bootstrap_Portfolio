@@ -1,0 +1,12 @@
+{% include "nav_menu.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<body>
+    <section id="add-project">
+        <form method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {{ wtf.quick_form(form, novalidate=True, button_map={'submit': 'primary'}) }}
+        </form>
+    </section>
+</body>
+</html>

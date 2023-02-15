@@ -95,14 +95,14 @@ p {
     left: 30%;
     color: #C4F2EE;
 }
-/*-------------------- HOME --------------------*/
+/*-------------------- HOME - INDEX --------------------*/
 .title-text {
     color: #C4F2EE;
     position: relative;
     top: 250%;
 }
 
-/*-------------------- ABOUT --------------------*/
+/*-------------------- ABOUT - INDEX --------------------*/
 #about {
     padding: 3%;
     color: #011140;
@@ -118,7 +118,7 @@ p {
     padding-bottom: 5%;
 }
 
-/*-------------------- CV --------------------*/
+/*-------------------- CV - INDEX --------------------*/
 
 #cv {
     background-color: #C4F2EE;
@@ -131,7 +131,7 @@ p {
     padding: 3% 3% 3% 0;
 }
 
-/*-------------------- PORTFOLIO --------------------*/
+/*-------------------- PORTFOLIO - INDEX --------------------*/
 #portfolio {
     width: 130%;
     padding: 5%;
@@ -142,13 +142,94 @@ p {
     padding: 5% 0%;
 }
 
-/*-------------------- CONTACT --------------------*/
+/*-------------------- CONTACT - INDEX --------------------*/
 #contact {
     background-color: #C4F2EE;
     width: 130%;
     padding: 5%;
     color: #011140;
 }
+
+/*-------------------- PORTFOLIO - PAGE --------------------*/
+#portfolio-header {
+    background-color: #011140;
+    color: #C4F2EE;
+    padding: 5%;
+    text-align: right;
+}
+
+#portfolio-body {
+    color: #011140;
+    background-color: #C4F2EE;
+    padding: 5%;
+    text-align: right;
+}
+
+
+#portfolio-body .card-body {
+    background-color: #011140;
+    color: #C4F2EE;
+}
+
+#portfolio-body .card {
+  position: relative;
+  width: 60%;
+  height: 0;
+  perspective: 1000px;
+}
+
+#portfolio-body .card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#portfolio-body .card-back {
+  transform: rotateY(180deg);
+}
+
+/*-------------------- PROJECT TEMPLATE PAGE --------------------*/
+#project-template-header {
+    background-color: #011140;
+    color: #C4F2EE;
+    padding: 5%;
+    text-align: right;
+}
+
+#project-template-body {
+    color: #011140;
+    background-color: #C4F2EE;
+    padding: 5%;
+    text-align: right;
+}
+
+
+/*-------------------- ADD PROJECT --------------------*/
+#add-project {
+    background-color: #011140;
+    color: #C4F2EE;
+    padding: 5%;
+}
+
+.form-group {
+    padding: 1%;
+    width: 50%;
+}
+
 
 /*-------------------- RESPONSIVENESS --------------------*/
 
@@ -195,3 +276,5 @@ p {
     width: 100px;
     background-color: red;
 }
+
+
