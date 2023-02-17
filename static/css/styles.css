@@ -9,7 +9,7 @@ h1 {
 }
 
 #landing {
-    background-image: url("../img/home-bg.jpg");
+    background-image: url("../img/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
     padding-top: 4%;
@@ -45,8 +45,7 @@ p {
 
 #nav-menu .profile-pic {
     border-radius: 50%;
-    padding-top: 10%;
-    padding-bottom: 3%;
+    width: 38%;
 }
 
 .icon-images {
@@ -89,6 +88,11 @@ p {
     background-color: #C4F2EE;
 }
 
+.dropdown-menu {
+    background-color: #011140;
+    color: #C4F2EE;
+}
+
 .copyright-text {
     position: absolute;
     bottom: 1%;
@@ -118,6 +122,9 @@ p {
     padding-bottom: 5%;
 }
 
+#about img {
+    width: 100%;
+}
 /*-------------------- CV - INDEX --------------------*/
 
 #cv {
@@ -163,6 +170,7 @@ p {
     background-color: #C4F2EE;
     padding: 5%;
     text-align: right;
+    height: 600px   ;
 }
 
 
@@ -173,7 +181,7 @@ p {
 
 #portfolio-body .card {
   position: relative;
-  width: 60%;
+  width: 80%;
   height: 0;
   perspective: 1000px;
 }

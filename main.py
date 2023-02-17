@@ -43,8 +43,8 @@ class Portfolio(db.Model):
     def to_dict(self):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 
 #---------------------- ADD PROJECT ----------------------#

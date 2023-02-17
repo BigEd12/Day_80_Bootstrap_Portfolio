@@ -34,7 +34,7 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">
-                        <img class="profile-pic" src="{{ url_for('static', filename='/img/profile-pic.png') }}" alt="Eduardo-Olmos">
+                        <img class="profile-pic" src="{{ url_for('static', filename='/img/profile-head.jpg') }}" alt="Eduardo-Olmos">
                     </a>
                   </li>
 
@@ -42,12 +42,12 @@
                       <a class="icon-image nav-link" aria-current="page" href="#">
                           <img class="icon-images" src="{{ url_for('static', filename='/img/instagram_blue.png') }}">
                       </a>
-                      <a class="icon-image nav-link" aria-current="page" href="www.linkedin.com/in/edward-olmos10">
+                      <a class="icon-image nav-link" aria-current="page" href="https://linkedin.com/in/edward-olmos10">
                           <img class="icon-images" src="{{ url_for('static', filename='/img/linkedin_blue.png') }}">
                       </a>
                       <a class="icon-image nav-link" aria-current="page" href="https://github.com/BigEd12">
                           <img class="icon-images" src="{{ url_for('static', filename='/img/github_blue.png') }}">
-                      </a>
+                      </a>  
                   </li>
 
 
@@ -68,10 +68,14 @@
                         <img class="menu-images" src="{{ url_for('static', filename='/img/cv_blue.png') }}">
                         CV</a>
                   </li>
-                  <li class="nav-item links">
-                    <a class="nav-link" href="#portfolio">
-                        <img class="menu-images" src="{{ url_for('static', filename='/img/portfolio_blue.png') }}">
-                        Portfolio</a>
+                  <li class="nav-item dropdown links">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img class="menu-images" src="{{ url_for('static', filename='/img/portfolio_blue.png') }}"> Portfolio
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#portfolio">Section</a></li>
+                          <li><a class="dropdown-item" href="{{ url_for ('portfolio') }}">Page</a></li>
+                      </ul>
                   </li>
                   <li class="nav-item links">
                     <a class="nav-link" href="#contact">
