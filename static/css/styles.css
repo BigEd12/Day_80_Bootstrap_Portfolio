@@ -264,28 +264,4 @@ a:hover {
 
 /*-------------------- RESPONSIVENESS --------------------*/
 
-    /*TABLETS*/
-
-@media (max-width: 1200px) {
-    /*COLLAPSE NAV*/
-	#sticky-bar {
-        visibility: hidden;
-        z-index: -1;
-        transition: 1s;
-    }
-
-    /*BACKGROUND IMAGE*/
-    .full-content {
-        position: relative;
-        left: 0;
-        transition: 1s;
-    }
-
-    /*PADDING FOR IMAGES*/
-
-    .project-row {
-        padding: 0;
-    }
-
-}
 
