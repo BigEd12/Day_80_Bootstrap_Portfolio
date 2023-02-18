@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, EmailField, SelectField, MultipleFileField
+from wtforms import StringField, SubmitField, EmailField, SelectField, MultipleFileField, TextAreaField
 from wtforms.validators import DataRequired
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 import os
 from werkzeug.utils import secure_filename
+import webbrowser
+import random
 
 ##---------------------- CONFIGURE BOOTSTRAP ---------------------- ##
 app = Flask(__name__)
@@ -32,19 +34,19 @@ class Portfolio(db.Model):
     name = db.Column(db.String(250), unique=True, nullable=False)
     number = db.Column(db.Integer, unique=True, nullable=False)
     level = db.Column(db.String(250), nullable=False)
-    description = db.Column(db.String(250), unique=True, nullable=False)
+    description = db.Column(db.Text, nullable=False)
     github = db.Column(db.String(250), unique=True, nullable=False)
     focus = db.Column(db.String(250))
-    c_name = db.Column(db.String(250))
+    c_name = db.Column(db.String(250), nullable=False)
     c_provider = db.Column(db.String(250), nullable=False)
     image_paths = db.Column(db.String(250), nullable=False)
-    gif_paths = db.Column(db.String(250))
+    gif_paths = db.Column(db.String(250), nullable=False)
     misc = db.Column(db.String(500))
     def to_dict(self):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
 
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 #---------------------- ADD PROJECT ----------------------#
@@ -52,7 +54,7 @@ class AddNewProjectForm(FlaskForm):
     name = StringField("Project Name", validators=[DataRequired()])
     number = StringField("Project Number", validators=[DataRequired()])
     level = SelectField(u"Project Level", choices=["Beginner", "Intermediate", "Intermediate+", "Advanced", "Portfolio"])
-    description = StringField("Project Description", validators=[DataRequired()])
+    description = TextAreaField("Project Description", validators=[DataRequired()])
     github = StringField("GitHub Link (URL)", validators=[DataRequired()])
     focus = StringField("Project Focus")
     c_name = SelectField(u"Course Name", choices=["100 Days of Code: The Complete Python Bootcamp"], validators=[DataRequired()])
@@ -61,14 +63,33 @@ class AddNewProjectForm(FlaskForm):
     gif_paths = MultipleFileField("Project Gifs")
     misc = StringField("Misc Data")
     submit = SubmitField("Submit")
+
+
 ##---------------------- COPYRIGHT YEAR ---------------------- ##
 year = datetime.now().strftime("%Y")
+
+##---------------------- RANDOM PROJECTS ---------------------- ##
+with app.app_context():
+    num_projects = len(db.session.query(Portfolio).all())
+    random_nums = random.sample(range(1, num_projects + 1), 2)
+    random_1 = Portfolio.query.get(random_nums[0])
+    random_2 = Portfolio.query.get(random_nums[1])
 
 @app.route("/")
 def home_page():
     form = ContactForm()
 
-    return render_template("index.html", form=form, year=year)
+    return render_template("index.html",
+                           form=form,
+                           year=year,
+                           project_1=random_1,
+                           project_2=random_2
+                           )
+
+@app.route("/email")
+def email():
+    webbrowser.open('mailto:olmos.edward@gmail.com')
+    return redirect(url_for("home_page"))
 
 @app.route("/portfolio")
 def portfolio():

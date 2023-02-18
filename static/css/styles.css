@@ -1,37 +1,57 @@
+:root {
+  --primary-color: #05043b;
+  --secondary-color: #D9C8B4;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Hind Siliguri', sans-serif;
-    font-size: 400%;
-    font-weight: 700;
-}
-
-#landing {
-    background-image: url("../img/bg.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    padding-top: 4%;
-    height: 1000px;
-    width: 130%;
 }
 
 a {
-    color: #ACCAF2;
+    color: var(--secondary-color);
     text-decoration: none;
     transition: 1s;
     opacity: 0.3
     transition-timing-function: ease-in-out;
 }
 
-a:hover {
-    opacity: 2;
-    color: #C4F2EE;
-}
-
 p {
     font-weight: 400;
+}
+
+/* Headings */
+.title-heading {
+    font-size: 400%;
+    font-weight: 700;
+}
+
+.sub-heading {
+    font-size: 200%;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Sections */
+
+.dark-section {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 5%;
+}
+
+.light-section {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 5%;
+}
+
+white-section {
+    color: var(--primary-color);
+    padding: 5%;
 }
 
 /*-------------------- NAVBAR --------------------*/
@@ -39,8 +59,12 @@ p {
     text-align: center;
 }
 
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
 .offcanvas {
-    background-color: #011640;
+    background-color: var(--primary-color);
 }
 
 #nav-menu .profile-pic {
@@ -68,7 +92,7 @@ p {
 }
 
 #nav-menu a, #nav-menu p {
-    color: #C4F2EE;
+    color: var(--secondary-color);
     opacity: 0.7;
     transition: 1s;
 
@@ -85,31 +109,42 @@ p {
 }
 
 .navbar-toggler {
-    background-color: #C4F2EE;
+    background-color: var(--secondary-color);
 }
 
 .dropdown-menu {
-    background-color: #011140;
-    color: #C4F2EE;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .copyright-text {
     position: absolute;
     bottom: 1%;
     left: 30%;
-    color: #C4F2EE;
+    color: var(--secondary-color);
 }
 /*-------------------- HOME - INDEX --------------------*/
 .title-text {
-    color: #C4F2EE;
     position: relative;
     top: 250%;
 }
 
+#landing {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 4%;
+    height: 1000px;
+    width: 130%;
+}
+
+a:hover {
+    opacity: 2;
+    color: var(--secondary-color);
+}
 /*-------------------- ABOUT - INDEX --------------------*/
 #about {
     padding: 3%;
-    color: #011140;
     width: 130%;
 }
 
@@ -128,10 +163,7 @@ p {
 /*-------------------- CV - INDEX --------------------*/
 
 #cv {
-    background-color: #C4F2EE;
     width: 130%;
-    padding: 5%;
-    color: #011140;
 }
 
 .cv-section-titles {
@@ -141,42 +173,46 @@ p {
 /*-------------------- PORTFOLIO - INDEX --------------------*/
 #portfolio {
     width: 130%;
-    padding: 5%;
-    color: #011140;
+    color: var(--primary-color);
+}
+
+#portfolio a {
+    color: var(--primary-color);
+}
+
+.portfolio-link-image {
+    width: 10%;
 }
 
 .project-row {
-    padding: 5% 0%;
+    padding: 5% 0;
 }
+
+.project-images {
+    width: 80%;
+}
+
+
 
 /*-------------------- CONTACT - INDEX --------------------*/
 #contact {
-    background-color: #C4F2EE;
     width: 130%;
-    padding: 5%;
-    color: #011140;
 }
 
 /*-------------------- PORTFOLIO - PAGE --------------------*/
 #portfolio-header {
-    background-color: #011140;
-    color: #C4F2EE;
-    padding: 5%;
     text-align: right;
 }
 
 #portfolio-body {
-    color: #011140;
-    background-color: #C4F2EE;
-    padding: 5%;
     text-align: right;
     height: 600px   ;
 }
 
 
 #portfolio-body .card-body {
-    background-color: #011140;
-    color: #C4F2EE;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 #portfolio-body .card {
@@ -211,33 +247,20 @@ p {
 }
 
 /*-------------------- PROJECT TEMPLATE PAGE --------------------*/
-#project-template-header {
-    background-color: #011140;
-    color: #C4F2EE;
-    padding: 5%;
+#project-template-header, #project-template-body {
     text-align: right;
 }
 
-#project-template-body {
-    color: #011140;
-    background-color: #C4F2EE;
-    padding: 5%;
-    text-align: right;
+.description-text {
+    white-space: pre-line;
 }
-
 
 /*-------------------- ADD PROJECT --------------------*/
-#add-project {
-    background-color: #011140;
-    color: #C4F2EE;
-    padding: 5%;
-}
 
 .form-group {
     padding: 1%;
     width: 50%;
 }
-
 
 /*-------------------- RESPONSIVENESS --------------------*/
 
@@ -259,30 +282,10 @@ p {
     }
 
     /*PADDING FOR IMAGES*/
-    .project-images {
-        padding-bottom: 3%;
-    }
 
     .project-row {
         padding: 0;
     }
 
-
 }
-
-.hamburger {
-    position: fixed;
-    height: 50px;
-    width: 100px;
-    background-color: red;
-    left: 350px;
-}
-
-#footer {
-    color: black;
-    height: 50px;
-    width: 100px;
-    background-color: red;
-}
-
 

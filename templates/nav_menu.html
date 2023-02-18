@@ -16,15 +16,32 @@
 
     <!---------- CUSTOM STYLESHEET ---------->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <script>
+          function copyToClipboard() {
+            // Get the text to copy
+            var textToCopy = "olmos.edward@gmail.com";
 
+          // Create a temporary input element to copy the text
+          var tempInput = document.createElement("input");
+          tempInput.value = textToCopy;
+          document.body.appendChild(tempInput);
+
+          // Select the text and copy it to the clipboard
+          tempInput.select();
+          document.execCommand("copy");
+
+          // Remove the temporary input element
+          document.body.removeChild(tempInput);
+        }
+        </script>
 </head>
 <body>
     <section id="nav-menu">
 
 
-        <nav class="navbar bg-dark fixed-top">
+        <nav class="navbar bg-light fixed-top">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Eduardo Olmos</a>
+            <a class="navbar-brand" href="{{ url_for('home_page') }}">Eduardo Olmos</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,6 +56,9 @@
                   </li>
 
                   <li class="nav-item">
+                      <a class="icon-image nav-link" aria-current="page" href="{{ url_for('email') }}">
+                          <img class="icon-images" src="{{ url_for('static', filename='/img/contact_blue.png') }}">
+                      </a>
                       <a class="icon-image nav-link" aria-current="page" href="#">
                           <img class="icon-images" src="{{ url_for('static', filename='/img/instagram_blue.png') }}">
                       </a>

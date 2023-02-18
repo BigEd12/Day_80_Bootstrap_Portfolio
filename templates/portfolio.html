@@ -1,10 +1,10 @@
 {% include "nav_menu.html" %}
 
 <body>
-    <section id="portfolio-header">
+    <section class="dark-section" id="portfolio-header">
         <div class="row">
             <div class="col-9">
-                <h1>My Portfolio</h1>
+                <h1 class="title-heading">My Portfolio</h1>
             </div>
         </div>
         <div class="row">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </section>
-    <section id="portfolio-body">
+    <section class="light-section" id="portfolio-body">
         <div class="row">
         {% for project in projects %}
             <div class="col-12 col-lg-3 col-md-6">

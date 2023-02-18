@@ -3,11 +3,11 @@
 
 <body>
         <!---------- LANDING SECTION ---------->
-        <section id="landing">
+        <section class="light-section" id="landing">
             <div class="row">
                 <div class="col-6 offset-6">
                     <div class="title-text">
-                        <h1>Eduardo Olmos</h1>
+                        <h1 class="title-heading">Eduardo Olmos</h1>
                         <br>
                         <h4>A developer</h4>
                     </div>
@@ -15,11 +15,11 @@
             </div>
         </section>
         <!---------- ABOUT SECTION ---------->
-        <section id="about">
+        <section class="white-section" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>About</h2>
+                        <h2 class="sub-heading">About</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -45,19 +45,16 @@
                         <p>With a strong foundation in problem-solving, communication, and teamwork from my years as a teacher, I am confident that I can bring a unique perspective and set of skills to the field of programming. I am driven by my desire to continue learning, and to use technology to create solutions that improve people's lives.</p>
                         <p>I am excited to embark on this new journey and to see what the future holds. I am confident that my experience, passion, and dedication will allow me to succeed and make a meaningful contribution to the tech community</p>
                     </div>
-                    <div class="col-4">
-                        <img src="{{ url_for('static', filename='/img/profile-pic.png') }}">
-                    </div>
                 </div>
             </div>
         </section>
 
         <!---------- CV SECTION ---------->
-        <section id="cv">
+        <section class="light-section" id="cv">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-12 cv-section-titles">
-                        <h2>Education</h2>
+                        <h2 class="sub-heading">Education</h2>
                         <div class="row">
                             <div class="col-2">
                                 <p>2022/2023</p>
@@ -96,7 +93,7 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-12 cv-section-titles">
-                        <h2>Work History</h2>
+                        <h2 class="sub-heading">Work History</h2>
                         <div class="row">
                             <div class="col-2">
                                 <p>2015 - pres.</p>
@@ -139,68 +136,67 @@
         </section>
 
         <!---------- PORTFOLIO SECTION ---------->
-        <section id="portfolio">
+        <section class="white-section" id="portfolio">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Portfolio</h2>
+                        <h2 class="sub-heading">Portfolio</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <p>This is a random selection of the work I
-                            have been completing since I began
-                            my journey. I have included the advanced and portfolio projects.</p>
+                        <p>Here I have included two random projects from my portfolio.</p>
                     </div>
-                    <div class="col-xl-6 col-12">
-                        <p>Click here for the complete collection</p>
-
-                        <div class="row">
-                            <div class="col-xl-4 col-12">
-                                <a class="btn btn-dark btn-sm" href="{{ url_for ('portfolio') }}" role="button">Projects</a>
-                            </div>
-                        </div>
+                    <div class="col-3">
+                        <a href="{{ url_for ('portfolio') }}"><img src="{{ url_for('static', filename='img/portfolio.png') }}" class="portfolio-link-image">   View portfolio</a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://github.com/BigEd12"><img src="{{ url_for('static', filename='img/github.png') }}" class="portfolio-link-image">   View GitHub</a>
                     </div>
                 </div>
                 <div class="row project-row">
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <img src="https://picsum.photos/300/200" class="project-images">
+                    <div class="col-md-6 col-12">
+                        <div class="card" style="width: 32rem;">
+                            <a href="{{ url_for('projects', project=project_1.id) }}">
+                                <img src="{{ url_for('static', filename='/images/projects/' ~ project_1.number ~ '/gifs/1.gif') }}" class="card-img-top" alt="Eduardo-Olmos - {{ project_1.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{project_1.name}}</h5>
+                                </div>
+                            </a>
+
+
+                        </div>
                     </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <img src="https://picsum.photos/300/200" class="project-images">
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <img src="https://picsum.photos/300/200" class="project-images">
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <img src="https://picsum.photos/300/200" class="project-images">
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <img src="https://picsum.photos/300/200" class="project-images">
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <img src="https://picsum.photos/300/200" class="project-images">
+                    <div class="col-md-6 col-12">
+                        <div class="card" style="width: 32rem;">
+                            <a href="{{ url_for('projects', project=project_2.id) }}">
+                                <img src="{{ url_for('static', filename='/images/projects/' ~ project_2.number ~ '/gifs/1.gif') }}" class="card-img-top" alt="Eduardo-Olmos - {{ project_2.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{project_2.name}}</h5>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!---------- CONTACT SECTION ---------->
-        <section id="contact">
+        <section class="light-section" id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Contact</h2>
+                        <h2 class="sub-heading">Contact</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <p>If you'd like to get in touch just fill out the form below </p>
+                        <p>If you'd like to get in touch just click to copy the email address below </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
-                        {{ wtf.quick_form(form) }}
+                    <div class="col 5">
+                        <button class="btn btn-primary" onclick="copyToClipboard()">olmos.edward@gmail.com</button>
                     </div>
                 </div>
 

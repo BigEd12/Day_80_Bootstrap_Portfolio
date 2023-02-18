@@ -1,14 +1,14 @@
 {% include "nav_menu.html" %}
 
 <body>
-    <section id="project-template-header">
+    <section class="dark-section" id="project-template-header">
         <div class="row">
             <div class="col-9">
-                <h1>{{ project.number }}. {{ project.name }}</h1>
+                <h1 class="title-heading">{{ project.number }}. {{ project.name }}</h1>
             </div>
         </div>
     </section>
-    <section id="project-template-body">
+    <section class="light-section" id="project-template-body">
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="project-image-container">
@@ -18,7 +18,7 @@
             <div class="col-12 col-lg-4">
                 <h5 class="card-title">{{ project.name }}</h5>
                 <hr>
-                <p class="card-text">{{ project.description }}</p>
+                <p class="card-text description-text">{{ project.description|safe }}</p>
                 {% if project.focus %}
                 <hr>
                 <p class="card-text"><small class="text-muted">Focus for the project:</small></p>
@@ -26,6 +26,11 @@
                 {% endif %}
                 <hr>
                 <p class="card-text"><small class="text-muted">{{ project.level }} project</small></p>
+                {% if project.misc %}
+                <a href="{{ project.misc }}">
+                    <p class="card-text"><small class="text-muted">Visit site</small></p>
+                </a>
+                {% endif %}
                 <hr>
                 <p class="card-text"><small class="text-muted">{{ project.c_provider }}</small></p>
                 <p class="card-text"><small class="text-muted">{{ project.c_name }}</small></p>
