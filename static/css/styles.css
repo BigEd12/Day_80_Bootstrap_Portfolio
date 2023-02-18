@@ -134,8 +134,7 @@ white-section {
     background-size: cover;
     background-attachment: fixed;
     padding-top: 4%;
-    height: 1000px;
-    width: 130%;
+    min-height: 1000px;
 }
 
 a:hover {
@@ -145,7 +144,7 @@ a:hover {
 /*-------------------- ABOUT - INDEX --------------------*/
 #about {
     padding: 3%;
-    width: 130%;
+    width: 100%;
 }
 
 .motivation-text {
@@ -163,7 +162,7 @@ a:hover {
 /*-------------------- CV - INDEX --------------------*/
 
 #cv {
-    width: 130%;
+    width: 100%;
 }
 
 .cv-section-titles {
@@ -172,7 +171,7 @@ a:hover {
 
 /*-------------------- PORTFOLIO - INDEX --------------------*/
 #portfolio {
-    width: 130%;
+    width: 100%;
     color: var(--primary-color);
 }
 
@@ -196,7 +195,7 @@ a:hover {
 
 /*-------------------- CONTACT - INDEX --------------------*/
 #contact {
-    width: 130%;
+    width: 100%;
 }
 
 /*-------------------- PORTFOLIO - PAGE --------------------*/
@@ -264,4 +263,21 @@ a:hover {
 
 /*-------------------- RESPONSIVENESS --------------------*/
 
+/* Mobiles */
+@media (max-width: 576px) {
 
+    .offcanvas {
+        max-width: 250px;
+    }
+
+    #landing {
+        background-image: url("../img/bg_2.jpg");
+        background-position: center center;
+        min-height: 950px;
+    }
+
+    .icon-images {
+        width: 2rem;
+        padding: 15%;
+    }
+}
